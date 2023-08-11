@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
+
 <html>
     <meta charset="UTF-8">
     <style>
@@ -50,8 +51,6 @@
                 <a href="login/logout.do">로그아웃</a>
             </c:otherwise>
         </c:choose>
-
-
 
         </br>
     </body>
