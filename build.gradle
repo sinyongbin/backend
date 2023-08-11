@@ -1,0 +1,42 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.2'
+	id 'io.spring.dependency-management' version '1.1.2'
+}
+
+group = 'sin'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper' //for JSP in IntelliJ Community
+	//implementation 'javax.servlet:jstl'
+	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl'//for JSTL
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'//for JSTL
+
+	compileOnly 'org.projectlombok:lombok' //추가
+	annotationProcessor 'org.projectlombok:lombok' //추가
+
+	implementation 'com.oracle.database.jdbc:ojdbc11'// 추가, ojdbc11은 jdbc를 만들 때 버전
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'// 추가
+
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.1'//버젼을 써줘야함(추가 !!), mybatis와 springboot를 연결
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'// jpa로 하기위해서 추가
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
